@@ -5,16 +5,27 @@ function getComputerChoice() {
   return Math.floor(Math.random() * 3);
 }
 
+const pResult = document.querySelector(".pResult");
+pResult.textContent = getComputerChoice();
+
 function getHumanChoice() {
-  let input = prompt("enter 0 for Rock,1 for Paper and 2 for scissor:");
-  let choice = parseInt(input);
-  if (choice >= 0 && choice <= 2) {
-    console.log(`You chose: ${UserChoices[choice]}`);
-    return choice;
-  } else {
-    console.log("wrong input");
-  }
+  const input = document.querySelector("input");
+  const button = document.querySelector("button");
+  const hResult = document.querySelector(".hResult");
+  button.addEventListener("click", () => {
+    const myItem = input.value;
+    input.value = "";
+    let choice = parseInt(myItem);
+    if (choice >= 0 && choice <= 2) {
+      console.log(`You chose: ${UserChoices[choice]}`);
+      const hResult = document.querySelector(".hResult");
+      hResult.textContent = choice;
+    } else {
+      console.log("wrong input");
+    }
+  });
 }
+
 function playgame() {
   let ComputerScore = 0;
   let UserScore = 0;
