@@ -1,2 +1,2 @@
 # Rock Paper Scissors
-ttps://kiatmg.github.io/RPS/
+https://kiatmg.github.io/RPS/
